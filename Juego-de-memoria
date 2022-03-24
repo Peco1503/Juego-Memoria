@@ -17,7 +17,7 @@ car = path('car.gif')
 tiles = list(range(32)) * 2
 state = {'mark': None}
 hide = [True] * 64
-
+contador = 0 #Contador para el numero de clicks
 
 def square(x, y):
     """Draw white square with black outline at (x, y)."""
@@ -44,9 +44,11 @@ def xy(count):
 
 def tap(x, y):
     """Update mark and hidden tiles based on tap."""
+    global contador #Convertimos la variable contador en global
     spot = index(x, y)
     mark = state['mark']
-
+    contador += 1   #Cada que se da un click, se suma 1 al contador.
+    print (contador)
     if mark is None or mark == spot or tiles[mark] != tiles[spot]:
         state['mark'] = spot
     else:
