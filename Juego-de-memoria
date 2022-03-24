@@ -60,6 +60,12 @@ def tap(x, y):
         hide[spot] = False
         hide[mark] = False
         state['mark'] = None
+    comprobar_si_gana()
+    if contador2 == 0:
+        up()
+        goto(100,100)
+        color('black')
+        write("FELICIDADES CAMPEON, HAS GANADO", font=('Arial', 50, 'normal'))
 
 
 def draw():
