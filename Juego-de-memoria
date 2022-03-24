@@ -68,12 +68,21 @@ def draw():
             x, y = xy(count)
             square(x, y)
     mark = state['mark']
+    up()
+    goto(50,200)
+    down()
+    write("Contador:", font=("Arial",15,))
+    goto(150,200)
+    write(contador, font=("Arial",17,))
+    
+    update()
+    ontimer(draw, 100)
+    
     if mark is not None and hide[mark]:
         x, y = xy(mark)
         up()
         goto(x + 26, y) #Original: (x + 2, y) #x alineada al centro
         color('black')
-<<<<<<< HEAD
         write(tiles[mark], align="center", font=('Arial', 30, 'normal')) #align=center
 
         if tiles[mark] > 10:
@@ -89,19 +98,8 @@ def draw():
             goto(x + 26, y) #Original: (x + 2, y) #x alineada al centro
             color('red')
             write(tiles[mark], align="center", font=('Arial', 30, 'normal')) #align=center
-            
-=======
-        write(tiles[mark], font=('Arial', 30, 'normal'))
-    #Agregamos el contador a la ventana.
-    up()
-    goto(50,200)
-    down()
-    write("Contador:", font=("Arial",15,))
-    goto(150,200)
-    write(contador, font=("Arial",17,))
->>>>>>> numeroTaps
-    update()
-    ontimer(draw, 100)
+        #Agregamos el contador a la ventana.
+    
 
 
 shuffle(tiles)
