@@ -75,7 +75,18 @@ def draw():
         goto(x + 2, y)
         color('black')
         write(tiles[mark], font=('Arial', 30, 'normal'))
-
+        if tiles[mark] > 10:
+            x, y = xy(mark)
+            up()
+            goto(x + 26, y) #Original: (x + 2, y) #x alineada al centro
+            color('blue')
+            write(tiles[mark], align="center", font=('Arial', 30, 'normal')) #align=center
+        if tiles[mark] >= 22:
+            x, y = xy(mark)
+            up()
+            goto(x + 26, y) #Original: (x + 2, y) #x alineada al centro
+            color('red')
+            write(tiles[mark], align="center", font=('Arial', 30, 'normal')) #align=center
     update()
     ontimer(draw, 100)
 
