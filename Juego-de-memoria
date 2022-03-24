@@ -50,11 +50,8 @@ def comprobar_si_gana():
 
 def tap(x, y):
     """Update mark and hidden tiles based on tap."""
-<<<<<<< HEAD
     global contador #Convertimos la variable contador en global
-=======
     global contador2
->>>>>>> detectarFinal
     spot = index(x, y)
     mark = state['mark']
     contador += 1   #Cada que se da un click, se suma 1 al contador.
@@ -64,17 +61,13 @@ def tap(x, y):
         hide[spot] = False
         hide[mark] = False
         state['mark'] = None
-<<<<<<< HEAD
-    
-=======
     comprobar_si_gana()
     if contador2 == 0:
         up()
         goto(100,100)
         color('black')
         write("FELICIDADES CAMPEON, HAS GANADO", font=('Arial', 50, 'normal'))
-
->>>>>>> detectarFinal
+    
 
 def draw():
     """Draw image and tiles."""
