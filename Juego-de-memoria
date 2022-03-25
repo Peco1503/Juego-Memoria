@@ -89,7 +89,7 @@ def draw():
     write(contador, font=("Arial",17,))
     
     update()
-    ontimer(draw, 100)
+    #ontimer(draw, 100) #Eliminado por innecesario
     
     if mark is not None and hide[mark]:
         x, y = xy(mark)
