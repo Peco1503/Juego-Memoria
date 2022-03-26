@@ -58,12 +58,6 @@ def tap(x, y):
         hide[spot] = False
         hide[mark] = False
         state['mark'] = None
-    comprobar_si_gana()
-    if contador2 == 0: #Escribir mensaje si se termina el juego
-        up()
-        goto(100,100)
-        color('black')
-        write("FELICIDADES CAMPEON, HAS GANADO", font=('Arial', 50, 'normal'))
     
 def draw():
     """Draw image and tiles."""
@@ -110,11 +104,11 @@ def draw():
         #Agregamos el contador a la ventana.
     
     comprobar_si_gana()
-    if contador2 == 0:
+    if contador2 == 0: #Escribir mensaje si se termina el juego
         up()
         goto(-190,100)
         down()
-        write("FELICIDADES CAMPEON, HAS GANADO", font=('Arial', 20, 'bold'))
+        write("FELICIDADES CAMPEON, HAS GANADO", font=('Arial', 10, 'bold'))
         color('white')
 
     update()
